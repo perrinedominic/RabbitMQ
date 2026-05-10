@@ -1,0 +1,14 @@
+# src/main/resources/application.yml
+
+spring:
+  rabbitmq:
+  # TODO: Set host
+  # TODO: Set port
+  # TODO: Set username
+  # TODO: Set password
+
+  application:
+  # TODO: Set application name
+
+server:
+# TODO: Set port
