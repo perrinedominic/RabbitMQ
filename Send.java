@@ -9,15 +9,25 @@ public class Send {
 
     private final static String QUEUE_NAME = "hello";
 
+    /**
+     * Main entry point of the application.
+     * Establishes a connection to RabbitMQ, declares a quorum queue,
+     * and publishes a message to it.
+     */
     public static void main(String[] argv) throws Exception {
+        // Create and configure a connection factory for RabbitMQ
         ConnectionFactory factory = new ConnectionFactory();
         factory.setHost("localhost");
 
         try (Connection connection = factory.newConnection();
             Channel channel = connection.createChannel()) {
+
+            // Declare a quorum queue named "hello" with the message persistence enabled
             channel.queueDeclare(QUEUE_NAME, true, false, false, Map.of("x-queue-type", "quorum"));
+
             String message = "Hello World!";
             channel.basicPublish("", QUEUE_NAME, null, message.getBytes(StandardCharsets.UTF_8));
+
             System.out.println(" [x] Sent '" + message + "'");
         }
     }
