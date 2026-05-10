@@ -15,6 +15,17 @@ target/
 build/
 bin/
 lib/
+dist/
+build/
+coverage/
+
+# Dependencies #
+node_modules
+
+# Environment Variables (.local) #
+.env.local
+.env.development.local
+.env.test.local
 
 # Package Files #
 *.jar
@@ -32,3 +43,6 @@ lib/
 hs_err_pid*
 replay_pid*
 /config.yaml
+
+# misc
+.idea
