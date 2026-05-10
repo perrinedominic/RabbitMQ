@@ -1,0 +1,12 @@
+<project xmlns="http://apache.org">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>RabbitMq</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <dependencies>
+        <!-- Your libraries will go here -->
+
+
+    </dependencies>
+</project>
