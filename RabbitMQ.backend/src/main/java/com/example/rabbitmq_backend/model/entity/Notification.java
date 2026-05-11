@@ -1,11 +1,11 @@
 package com.example.rabbitmq_backend.model.entity;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 
-import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -18,6 +18,7 @@ public class Notification {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
+    @jakarta.persistence.Id
     private UUID id;
 
     @Column(nullable = false)
