@@ -2,13 +2,34 @@
 
 spring:
   rabbitmq:
-  # TODO: Set host
-  # TODO: Set port
-  # TODO: Set username
-  # TODO: Set password
+    host: localhost
+    port: # 5672
+    username: guest
+    password: guest
+
 
   application:
   # TODO: Set application name
 
+  datasource:
+    url: # <postres_url>
+    username: postgres
+    password: # <password>
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+      show-sql: false
+
 server:
 # TODO: Set port
+
+rabbitmq:
+  queue-name: task_queue
+  exchange-name: spring-boot-exchange
+  routing-key: foo.bar.#
